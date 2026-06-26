@@ -1,0 +1,23 @@
+title: Okta Admin Role Assigned
+id: a1b2c3d4-0001-4000-8000-000000000001
+status: test
+description: Detects assignment of an administrator privilege in the Okta system log.
+author: rsigma-action-demo
+date: 2026-06-26
+references:
+  - https://developer.okta.com/docs/reference/api/system-log/
+  - https://attack.mitre.org/techniques/T1098/
+logsource:
+  product: okta
+  service: okta
+detection:
+  selection:
+    eventType: user.account.privilege.grant
+    displayMessage|contains: admin
+  condition: selection
+falsepositives:
+  - Legitimate administrative role changes by IT
+level: high
+tags:
+  - attack.persistence
+  - attack.t1098

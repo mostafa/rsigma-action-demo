@@ -1,0 +1,12 @@
+# Per-rule fire-count expectations checked by `rsigma rule backtest`.
+# These are what would have caught the SigmaHQ #5964 field-name regression:
+# if an Okta rule's field were lowercased (eventType -> eventtype), the rule
+# would stop matching the real Okta events below and `at_least: 1` would fail,
+# even though lint and validate still pass.
+expectations:
+  - rule: Okta Admin Role Assigned
+    at_least: 1
+  - rule: Okta API Token Created
+    exactly: 1
+  - rule: PowerShell Encoded Command
+    at_least: 1

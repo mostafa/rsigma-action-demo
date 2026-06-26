@@ -1,0 +1,3 @@
+{"eventType":"user.account.privilege.grant","displayMessage":"Grant user admin privilege","outcome":{"result":"SUCCESS"},"actor":{"alternateId":"attacker@example.com"}}
+{"eventType":"system.api_token.create","displayMessage":"Create API token","outcome":{"result":"SUCCESS"},"actor":{"alternateId":"svc@example.com"}}
+{"eventType":"user.session.start","displayMessage":"User login to Okta","outcome":{"result":"SUCCESS"},"actor":{"alternateId":"alice@example.com"}}

@@ -1,0 +1,2 @@
+{"Image":"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","CommandLine":"powershell -enc ZQBjAGgAbwA=","ParentImage":"C:\\Windows\\explorer.exe"}
+{"Image":"C:\\Windows\\System32\\cmd.exe","CommandLine":"cmd /c whoami","ParentImage":"C:\\Windows\\explorer.exe"}

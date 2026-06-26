@@ -1,0 +1,33 @@
+name: Detection-as-Code
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write # the sticky summary comment on pull requests
+
+concurrency:
+  group: dac-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  rsigma:
+    name: rsigma gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # required for the merge-base fields-drift diff
+
+      # Pinned to @main until timescale/rsigma-action cuts v1; switch to @v1 then.
+      - uses: timescale/rsigma-action@main
+        with:
+          version: v0.17.0
+          rules: rules/
+          corpus: tests/corpus
+          expectations: tests/expectations.yml
+          coverage: "true"
+          coverage-targets: tests/targets.txt

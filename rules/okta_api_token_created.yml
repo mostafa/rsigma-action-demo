@@ -1,0 +1,22 @@
+title: Okta API Token Created
+id: a1b2c3d4-0002-4000-8000-000000000002
+status: test
+description: Detects creation of an Okta API token, which grants long-lived programmatic access.
+author: rsigma-action-demo
+date: 2026-06-26
+references:
+  - https://developer.okta.com/docs/reference/api/system-log/
+  - https://attack.mitre.org/techniques/T1098/001/
+logsource:
+  product: okta
+  service: okta
+detection:
+  selection:
+    eventType: system.api_token.create
+  condition: selection
+falsepositives:
+  - Provisioning of legitimate service-account tokens
+level: medium
+tags:
+  - attack.persistence
+  - attack.t1098.001

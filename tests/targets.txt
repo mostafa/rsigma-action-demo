@@ -1,0 +1,4 @@
+# ATT&CK techniques this ruleset is meant to cover, one per line.
+T1098
+T1098.001
+T1059.001
